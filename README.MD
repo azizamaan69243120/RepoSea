@@ -4,20 +4,20 @@ AI-powered GitHub repository analysis tool that loads GitHub repositories using 
 
 ## 🛠️ Tech Stack
 
-* Node.js
-* Express.js
-* LangChain
-* @langchain/community
-* @langchain/core
-* CORS
+- Node.js
+- Express.js
+- LangChain
+- @langchain/community
+- @langchain/core
+- CORS
 
-```
+````
 
 ## ⚙️ Initialize Node & Installation Dependencies
 
 ```bash
 npm init -y
-```
+````
 
 Install dependencies:
 
@@ -79,10 +79,10 @@ The `github-loader.js` module uses LangChain's `GithubRepoLoader` to load files 
 
 Each repository file is converted into a LangChain `Document` containing:
 
-* File content
-* File path
-* Repository information
-* Branch information
+- File content
+- File path
+- Repository information
+- Branch information
 
 Ex output:
 
@@ -129,4 +129,30 @@ Ex output:
     },
     id: undefined
   }
+ ```   
+
+## Summary -> Generate Embeddings
+
+```text
+  Loading/fetching github repo...
+Github repo fetched... 6 Files found
+Generating summary...
+Summary Generated for:  README.md
+Generating embedding...
+Generating summary...
+Summary Generated for:  auth.js
+Generating embedding...
+Generating summary...
+Summary Generated for:  new_file.txt
+Generating embedding...
+Generating summary...
+Summary Generated for:  package.json
+Generating embedding...
+Generating summary...
+Summary Generated for:  product.txt
+Generating embedding...
+Generating summary...
+Summary Generated for:  server.js
+Generating embedding...
+✅ Embeddings generated and saved to embeddings.json
 ```

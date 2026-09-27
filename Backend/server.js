@@ -5,15 +5,15 @@ import indexRepo from "./lib/indexRepo.js"
 const app = express();
 app.use(express.json())
 
-app.post("/add-repo" , (req , res)=>{
+app.post("/add-repo" , async (req , res)=>{
 
     const {githubURL,githubToken} = req.body;
 
-    indexRepo(githubURL, githubToken)
+    await indexRepo(githubURL, githubToken)
 
     res.json({
-        message : "Repo Indexed Sucessfully"
-    })
+        message : "Repo Indexed Sucessfully ✅, Embeddings generated and saved to embeddings.json",
+    });
 
 });
 
@@ -23,10 +23,10 @@ app.post("/ask-question" , (req,res)=>{
     const {userQuery} = req.body
 
     res.json({
-        message : "Query answer generated sucessfully"
-    })
+        message : "Query answer generated sucessfully",
+    });
 
-})
+});
 
 
 
